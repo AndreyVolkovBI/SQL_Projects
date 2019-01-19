@@ -1,6 +1,6 @@
 ### Sql Operators
 
-## Join
+## Таблицы
 
 `t1`
 
@@ -21,7 +21,7 @@
 6|60
 
 
-Неправильно (Cross Join):
+## Неправильный (Cross Join):
 
 При таком запросе будут дублироваться все значения
 ```sql
@@ -39,3 +39,62 @@ and t2.key = t3.key
 2|10
 2|20
 ...|...
+
+## Inner Join
+```sql
+select d1, d2
+from t1 inner join t2 on t1.k1 = t2.k2
+```
+| d1 | d2 |
+------------- | -------------
+1|10
+2|20
+
+## Left Join
+```sql
+select d1, d2
+from t1 left join t2 on t1.k1 = t2.k2
+```
+| d1 | d2 |
+------------- | -------------
+1|10
+2|20
+3|Null
+4|Null
+
+## Right Join
+```sql
+select d1, d2
+from t1 right join t2 on t1.k1 = t2.k2
+```
+| d1 | d2 |
+------------- | -------------
+1|10
+2|20
+Null|50
+Null|60
+
+## Full Join
+```sql
+select d1, d2
+from t1 full join t2 on t1.k1 = t2.k2
+```
+| d1 | d2 |
+------------- | -------------
+1|10
+2|20
+3|Null
+4|Null
+Null|50
+Null|60
+
+## Union
+```sql
+select d1, d2
+from t1 left join t2 on t1.k1 = t2.k2
+union all
+select d1, d2
+from t1 right join t2 on t1.k1 = t2.k2
+where t1 is Null
+```
+
