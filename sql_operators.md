@@ -97,4 +97,19 @@ select d1, d2
 from t1 right join t2 on t1.k1 = t2.k2
 where t1 is Null
 ```
+## Group By
+* Used to group the data
+* Partition the set of tuples into groups based on certain criteria
+* Groups are formed on the basis of certain att
+* Aggregation functions are calculated for each group
+
+Example
+
+Q: Determine the maximum salary of employee in each department/
+```sql
+select Dep,
+max(Sal)
+from Employee
+group by Dep
+```
 
