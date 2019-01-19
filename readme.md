@@ -2,7 +2,7 @@
 Home assignment for Data management course at BI HSE, 2nd year
 ## Yandex Market - subject area study
 Yandex.Market is consultant for products and prices. In the Yandex.Market catalog you will find the widest selection of products ranging from kitchen utensils and children's toys to auto parts and air conditioners.
-# Conceptual level
+## Conceptual level
 ![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/conceptual_level.png)
 
 ## Physical level
