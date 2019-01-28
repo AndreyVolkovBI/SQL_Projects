@@ -4,10 +4,10 @@ Home assignment for Data management course at BI HSE, 2nd year
 ## Content
 * [Subject area study](#subject_area)
 * [Database design - conceptual level](#database_concept)
-* [Database design - physical layer (external Layer)](#)
-* [Creating procedures, functions, triggers and examples of their use](#)
-* [Creating tables in SQL Server 2014 Management Studio](#)
-* [Filling tables in SQL Server 2014 Management Studio](#)
+* [Database design - physical layer (external Layer)](#database_physical)
+* [Creating procedures, functions, triggers and examples of their use](#creating_proc_func_trig)
+* [Creating tables in SQL Server 2014 Management Studio](#creating_tables)
+* [Filling tables in SQL Server 2014 Management Studio](#filling_tables)
 
 <a name="subject_area"></a>
 ## Subject area study
@@ -71,6 +71,39 @@ In this model, entities appear with properties, an explicit link is created by i
 
 <a name="creating_proc_func_trig"></a>
 ## Creating procedures, functions, triggers and examples of their use
+
+### Procedures
+
+how_many_clicks_left - a procedure that counts how many clicks on a store advertisement a user has left
+
+![how_many_clicks_left](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/how_many_clicks_left.png)
+![how_many_clicks_left_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/how_many_clicks_left_result.png)
+
+all_deferred_by_customer_id - a procedure that displays all deferred goods user by customer id
+
+![all_deferred_by_customer_id](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_defered_by_customer_id.png)
+![all_deferred_by_customer_id_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_defered_by_customer_id_result.png)
+
+all_reviews_by_customer_id - a procedure that shows all customer's reviews
+
+![all_reviews_by_customer_id](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_reviews_by_customer_id.png)
+![all_reviews_by_customer_id_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_reviews_by_customer_id_result.png)
+
+show_product_with_specifications_and_categories - procedure that shows all the characteristics of products and categories
+
+![show_product_with_specifications_and_categories](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_products_with_specifications_and_categories.png)
+![show_product_with_specifications_and_categories_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_prod_result.png)
+
+add_customer - adds a customer to a table with customers
+
+![add_customer](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_prod_result.png)
+![add_customer_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_prod_result.png)
+
+
+
+### Functions
+
+### Triggers
 
 <a name="creating_tables"></a>
 ## Creating tables in SQL Server 2014 Management Studio
