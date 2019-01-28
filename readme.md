@@ -1,5 +1,17 @@
 # Yandex Market - Database structure
 Home assignment for Data management course at BI HSE, 2nd year
+<<<<<<< HEAD
+=======
+## Yandex Market - subject area study
+Yandex.Market is consultant for products and prices. In the Yandex.Market catalog you will find the widest selection of products ranging from kitchen utensils and children's toys to auto parts and air conditioners.
+## Conceptual level
+![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/conceptual_level.png)
+
+## Physical level
+![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/physical_level.png)
+## Entities
+`Yandex` - the company owns Yandex Market
+>>>>>>> a2e730b47f5fe30af31db8c7a418017d947ce681
 
 ## Content
 * [Subject area study](#database_concept)
