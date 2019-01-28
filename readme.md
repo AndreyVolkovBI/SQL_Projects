@@ -2,13 +2,14 @@
 Home assignment for Data management course at BI HSE, 2nd year
 
 ## Content
-* [Subject area study](#database_concept)
-* [Database design - conceptual level](#)
+* [Subject area study](#subject_area)
+* [Database design - conceptual level](#database_concept)
 * [Database design - physical layer (external Layer)](#)
 * [Creating procedures, functions, triggers and examples of their use](#)
 * [Creating tables in SQL Server 2014 Management Studio](#)
 * [Filling tables in SQL Server 2014 Management Studio](#)
 
+<a name="subject_area"></a>
 ## Subject area study
 Yandex.Market is a service for search and selection of goods. There is a huge choice on the Market: more than 100 million offers from 20 thousand stores.
 Service users have access to detailed descriptions of product characteristics, product search by parameters, comparison of models and prices, customer reviews about products and stores, video reviews, seller ratings and other options that help customers make the right choice.
@@ -44,6 +45,18 @@ Describing this subject area, we can distinguish the following entities:
 <a name="database_concept"></a>
 ## Database design - conceptual level
 ![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/yandex_market_diagram.png)
+
+<a name="database_physical"></a>
+## Database design - physical layer (external Layer)
+
+<a name="creating_proc_func_trig"></a>
+## Creating procedures, functions, triggers and examples of their use
+
+<a name="creating_tables"></a>
+## Creating tables in SQL Server 2014 Management Studio
+
+<a name="filling_tables"></a>
+## Filling tables in SQL Server 2014 Management Studio
 
 ## Procedures
 1. add_store_to_product(@storeId int, @productId int)  -- adds store to product card by ids
