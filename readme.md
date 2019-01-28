@@ -63,7 +63,11 @@ Pay attention to the features of this model:
 
 <a name="database_physical"></a>
 ## Database design - physical layer (external Layer)
+
+Let's transfer the conceptual model to the physical level.
 ![yandex_market_physical_level](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/physical_level.png)
+
+In this model, entities appear with properties, an explicit link is created by identifiers, the model is supplemented with aggregating entities for implementing many-to-many relationships (SpecificationInCategory, ProductInCategory, SpecificationOfProduct, ProductInStore).
 
 <a name="creating_proc_func_trig"></a>
 ## Creating procedures, functions, triggers and examples of their use
@@ -71,23 +75,63 @@ Pay attention to the features of this model:
 <a name="creating_tables"></a>
 ## Creating tables in SQL Server 2014 Management Studio
 
+The database diagram in SQL Server 2014 Management Studio completely copies both the properties and the location of the database model at the physical level.
+
+![yandex_market_tables_first_part](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/schema/first_part.png)
+![yandex_market_tables_second_part](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/schema/second_part.png)
+
 <a name="filling_tables"></a>
 ## Filling tables in SQL Server 2014 Management Studio
 
-## Procedures
-1. add_store_to_product(@storeId int, @productId int)  -- adds store to product card by ids
-2. add_review_to_product(@reviewId int, @productId int, @userId int)  -- adds review to a specific product
-3. add_new_user(@full_name nvarchar(50), @email nvarchar(100), @password nvarchar(100))  -- adds new user
-4. add_product_to_cart(@productId int, @cartId int)  -- adds product to cart by product and cart ids
+Tables are populated by performing data insertion into the table.
 
-## Functions
-1. get_orders_by_user_id(@userId int)  -- returns all orders from particular user
-2. get_ads_by_store_id(@storeId int)  -- returns all ads of particular store
+### Yandex
+![yandex_market_tables_filling_yandex](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/yandex_table.png)
 
-## Triggers
-1. add_new_user_password_validation  -- checks password validation
-2. add_reminder_for_shipping  -- adds reminder when shipping is submitted
+### Customer
+![yandex_market_tables_filling_customer](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/customer.png)
 
+### Deferred
+![yandex_market_tables_filling_deferred](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/deffered_table.png)
+
+### Review
+![yandex_market_tables_filling_review](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/review_table.png)
+
+### Store
+![yandex_market_tables_filling_store](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/store_table.png)
+
+### Advertisement
+![yandex_market_tables_filling_advertisement](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/advertisement_table.png)
+
+### Price Plan
+![yandex_market_tables_filling_price_plan](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/price_plan_table.png)
+
+### Delivery Service
+![yandex_market_tables_filling_delivery_service](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/delivery_service_table.png)
+
+### Delivery
+![yandex_market_tables_filling_delivery](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/delivery_table.png)
+
+### Product
+![yandex_market_tables_filling_product](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/product.png)
+
+### Product In Store
+![yandex_market_tables_filling_product_in_store](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/product_in_store.png)
+
+### Category
+![yandex_market_tables_filling_category](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/category_table.png)
+
+### Specification
+![yandex_market_tables_filling_specification](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/specification_table.png)
+
+### Specification In Category
+![yandex_market_tables_filling_specification_in_category](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/specification_in_category.png)
+
+### Product In Category
+![yandex_market_tables_filling_product_in_category](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/product_in_category.png)
+
+### Specification Of Product
+![yandex_market_tables_filling_specification_of_product](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/tables/specification_of_product.png)
 
 ## Functions Samples
 ```sql
@@ -116,16 +160,20 @@ go
 ## References
 About Yandex Market: https://yandex.ru/support/partnermarket/
 
-Placing a store on Yandex Market: https://yandex.ru/support/partnermarket/registration/how-to-register.html
+Why Yandex Market refused shopping cart: https://yandex.ru/support/partnermarket/purchase/about.html
 
-Price list: https://yandex.ru/support/partnermarket/export/recommendation.html#recommendation
+Card Product: https://yandex.ru/support/partnermarket/about/product-profile.html
 
-Questions about the product: https://yandex.ru/support/market/opinions/discussion.html
+Product Reviews: https://yandex.ru/support/market/opinions/opinion.html
 
-Store rating: https://yandex.ru/support/market/opinions/rating.html
+Delivery for online stores: https://delivery.yandex.ru/promo/
 
-Yandex delivery service: https://delivery.yandex.ru/
+Delivery method: https://yandex.ru/support/partnermarket/settings/delivery.html
 
-Store products on Market: https://yandex.ru/adv/products/classified/market/
+Market for stores: https://yandex.ru/support/partnermarket/
 
-Application placement positions: https://yandex.ru/support/partnermarket/about/placement-positions.html
+Price list: https://yandex.ru/support/partnermarket/export/recommendation.html
+
+Promotion: https://yandex.ru/support/partnermarket/auction/high-positions.html
+
+Rate Management (tariff plan): https://yandex.ru/support/partnermarket/auction/select-and-set.html
