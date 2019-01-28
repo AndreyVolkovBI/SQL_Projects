@@ -74,36 +74,55 @@ In this model, entities appear with properties, an explicit link is created by i
 
 ### Procedures
 
-how_many_clicks_left - a procedure that counts how many clicks on a store advertisement a user has left
+`how_many_clicks_left` - a procedure that counts how many clicks on a store advertisement a user has left
 
 ![how_many_clicks_left](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/how_many_clicks_left.png)
 ![how_many_clicks_left_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/how_many_clicks_left_result.png)
 
-all_deferred_by_customer_id - a procedure that displays all deferred goods user by customer id
+`all_deferred_by_customer_id` - a procedure that displays all deferred goods user by customer id
 
 ![all_deferred_by_customer_id](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_defered_by_customer_id.png)
 ![all_deferred_by_customer_id_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_defered_by_customer_id_result.png)
 
-all_reviews_by_customer_id - a procedure that shows all customer's reviews
+`all_reviews_by_customer_id` - a procedure that shows all customer's reviews
 
 ![all_reviews_by_customer_id](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_reviews_by_customer_id.png)
 ![all_reviews_by_customer_id_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/all_reviews_by_customer_id_result.png)
 
-show_product_with_specifications_and_categories - procedure that shows all the characteristics of products and categories
+`show_product_with_specifications_and_categories` - procedure that shows all the characteristics of products and categories
 
 ![show_product_with_specifications_and_categories](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_products_with_specifications_and_categories.png)
 ![show_product_with_specifications_and_categories_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_prod_result.png)
 
-add_customer - adds a customer to a table with customers
+`add_customer` - adds a customer to a table with customers
 
-![add_customer](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_prod_result.png)
-![add_customer_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/show_prod_result.png)
-
-
+![add_customer](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/proc_add_customer.png)
+![add_customer_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/Procedures/proc_res.png)
 
 ### Functions
 
+`get_advertising_by_store_id` - a function that returns a table with a description of the specific store's price plan
+
+![get_advertising_by_store_id](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/func/get_ads_by_store_id.png)
+![get_advertising_by_store_id_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/func/get_ads_by_store_id_result.png)
+
+`get_all_stores_with_info_that_have_product` - a function that returns a table with information about stores that have a specific product
+
+![get_all_stores_with_info_that_have_product](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/func/get_all_stores.png)
+![get_all_stores_with_info_that_have_product_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/func/get_all_stores_result.png)
+
 ### Triggers
+
+`password_validation` - a trigger that terminates a transaction if the number of characters in the password is less than five
+
+![password_validation](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/trigger/validation_password.png)
+As a result, the operation was interrupted while trying to add a user with a password length of less than 5 characters.
+![password_validation_result](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/trigger/trig_res.png)
+
+`yandex_validation` - a trigger that interrupts a transaction when trying to insert data into the Yandex table, into which you cannot insert data
+![yandex_validation](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/trigger/insert_error.png)
+When you try to insert data into the Yandex table, the trigger fires and completes the transaction.
+![yandex_validation](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/ManagementStudio/trigger/valid_result.png)
 
 <a name="creating_tables"></a>
 ## Creating tables in SQL Server 2014 Management Studio
