@@ -41,13 +41,29 @@ Describing this subject area, we can distinguish the following entities:
 
 `Price Plan` - pricing plan for certain advertisement
 
+Designing the database for Yandex Market does not provide for a detailed consideration of the features of store advertising, user properties, and work with the delivery service.
+
 
 <a name="database_concept"></a>
 ## Database design - conceptual level
-![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/yandex_market_diagram.png)
+
+Transfer the entity data to the ER Diagram and define the connections between them.
+![yandex_market_conceptual_level](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/conceptual_level.png)
+
+Pay attention to the features of this model:
+1. In one category there may be many products and one product may be in several categories. Each category can have many characteristics, and each characteristic can reflect several categories at once. A single product can have many characteristics, and each characteristic can reflect several products. Such an intricate system with categories and characteristics is motivated by the implementation of a convenient search by categories and characteristics within each category. Read more - how to choose a product: https://yandex.ru/support/market/choice-goods/product-search.html
+
+2. Recently, Yandex Market has abandoned the “Cart” on the web site, replacing it with the “Deferred” button without the ability to place an order. One buyer may have several deferred goods and one deferred product may have one buyer. Read more - why Yandex Market refused shopping cart: https://yandex.ru/support/partnermarket/purchase/about.html
+
+3. Yandex cooperates with several delivery services and acts as an intermediary between the store and the delivery service. Therefore, in a model, a company may have multiple delivery services, or it may not have at all. One delivery service can have many deliveries, and one delivery can be served by only one delivery service.
+
+4. The buyer can leave feedback on products, one review belongs to one buyer. A single product can have multiple reviews and one review can have one product.
+
+5. A store in the price list can have many products, one product can be in several price lists at once. One store can have several deliveries at once, and one delivery can belong to only one store. A store can have several advertisements at once and one advertisement can belong to only one store. Each announcement has one tariff plan (price plan) and one tariff plan can be at once at several announcements.
 
 <a name="database_physical"></a>
 ## Database design - physical layer (external Layer)
+![yandex_market_physical_level](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/physical_level.png)
 
 <a name="creating_proc_func_trig"></a>
 ## Creating procedures, functions, triggers and examples of their use
