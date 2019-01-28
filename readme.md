@@ -1,32 +1,49 @@
 # Yandex Market - Database structure
 Home assignment for Data management course at BI HSE, 2nd year
-## Yandex Market - subject area study
-Yandex.Market is consultant for products and prices. In the Yandex.Market catalog you will find the widest selection of products ranging from kitchen utensils and children's toys to auto parts and air conditioners.
-![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/yandex_market_diagram.png)
-## Entities
-`Yandex` - the company owns Yandex Market
 
-`Customer` - a customer of Yandex Market
+## Content
+* [Subject area study](#database_concept)
+* [Database design - conceptual level](#)
+* [Database design - physical layer (external Layer)](#)
+* [Creating procedures, functions, triggers and examples of their use](#)
+* [Creating tables in SQL Server 2014 Management Studio](#)
+* [Filling tables in SQL Server 2014 Management Studio](#)
 
-`Shipping Service` - Yandex delivery service
+## Subject area study
+Yandex.Market is a service for search and selection of goods. There is a huge choice on the Market: more than 100 million offers from 20 thousand stores.
+Service users have access to detailed descriptions of product characteristics, product search by parameters, comparison of models and prices, customer reviews about products and stores, video reviews, seller ratings and other options that help customers make the right choice.
 
-`Store` - online stores, Yandex Market's partners
+Describing this subject area, we can distinguish the following entities:
 
-`Cart` - each user has a cart with multiple orders
+### Entities
+`Yandex` - administration of the company "Yandex", which manages the entire process of supporting the infrastructure of Yandex Market
 
-`Order` - one particular order that could contain several products
+`Deferred` - deferred goods of a particular user, which can be returned later, usually this section is called "bookmarks"
 
-`Product` - product item represented by Yandex Market itself
+`Product` - product presented on the platform containing reviews and a list of stores that have this product in stock
+
+`Category` - a category combining similar products
+
+`Specification` - characteristic describing a particular product
 
 `Review` - feedback on specific product
 
-`Shipping` - shipping details
+`Delivery service` - Yandex Market delivery service serving customer's orders
 
-`Price list` - each store has its own price list that contains informations about all the available products
+`Delivery` - information about the delivery of a particular product
 
-`Advertisement` - each store could have its own advertisement inside the Yandex Market platform
+`Store` - store, Yandex Market partner, containing a list of products
 
-`Price plan` - each advertisement has to have specific price plan
+`Price list` - specific store price list
+
+`Advertisement` - particular store advertisement
+
+`Price Plan` - pricing plan for certain advertisement
+
+
+<a name="database_concept"></a>
+## Database design - conceptual level
+![yandex_market_diagram](https://github.com/AndreyVolkovBI/SQL_Projects/blob/master/yandex_market_diagram.png)
 
 ## Procedures
 1. add_store_to_product(@storeId int, @productId int)  -- adds store to product card by ids
